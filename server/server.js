@@ -15,9 +15,19 @@ var io =socketIO(server) ;
 app.use(express.static(publicPath)) ;
 io.on('connection' ,(socket)=>{
 console.log('new user connected') ;
+
 socket.on('disconnect' ,()=>{
     console.log('Disconnected client') ;
 }) ;
+socket.emit('newMessage',{
+srom:'Salma' ,
+text:'ta3bana moot' ,
+createdAt:'0000'
+} ) ;
+socket.on('createMessage' ,(message)=>{
+    console.log('message' ,message) ;
+    }) ;
+
 }) ;
 
 server.listen(port ,()=>{
