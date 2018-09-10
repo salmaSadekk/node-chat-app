@@ -10,6 +10,7 @@ socket.on('disconnect' ,function(){
 socket.on('newMessage' , function(message){
 console.log('newmessage' , message) ;
 }) ;
+
 /*
 socket.emit('createMessage' ,{
     from:'client' ,
